@@ -28,7 +28,7 @@ $(NAME): $(OBJ) $(LIBFTA)
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-# Calls the makefile of the libft to make it.
+# Calls the makefile of the libft to take care of it.
 .phony: $(LIBFTA)
 $(LIBFTA):
 	@make -C $(LIBFTD)
