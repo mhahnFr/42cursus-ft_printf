@@ -42,3 +42,7 @@ clean:
 .phony: fclean
 fclean: clean
 	- $(RM) $(NAME)
+
+# !!! REMOVE ME BEFORE SUBMISSION !!!
+test: $(NAME)
+	$(CC) $(CFLAGS) main.c $(NAME)
