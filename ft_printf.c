@@ -1,9 +1,13 @@
 #include "ft_printf.h"
+#include "printf_delegate.h"
 
 int	ft_printf(const char *s, ...)
 {
+	va_list	args;
+	size_t	result;
 
-	s = NULL;
-	return 0;
+	va_start(args, s);
+	result = printf_delegate(&args, s);
+	va_end(args);
+	return (result);
 }
-
