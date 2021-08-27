@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-#include "print.h"
+#include "./print.h"
 
 size_t	print_string(t_format *f, char *str)
 {

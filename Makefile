@@ -2,8 +2,10 @@
 NAME	=	libftprintf.a
 
 # All source files needed by this project.
-SRC		=	ft_printf.c printf_delegate.c printer.c format.c character.c	\
-			string.c pointer.c int.c uint.c hex.c number_base.c
+SRC		=	ft_printf.c ./delegate/printf_delegate.c ./delegate/printer.c	\
+			./format/format.c ./print/character.c ./print/string.c			\
+			./print/pointer.c ./print/int.c ./print/uint.c ./print/hex.c	\
+			./print_helper/number_base.c
 
 
 # A macro to change the extension of the files.
@@ -49,6 +51,18 @@ fclean: clean
 # Deletes everything and compiles all files again.
 re: fclean all
 
-# !!! REMOVE ME BEFORE SUBMISSION !!!
+# A rule that compiles a main file with the library.
 test: $(NAME)
 	$(CC) $(CFLAGS) main.c $(NAME)
+
+# A rule that prints all available rules.
+.phony: help
+help:
+	@echo 	"Available rules:\n\n\
+[Default]	all\n\
+			$(NAME)\n\
+			clean\n\
+			fclean\n\
+			re\n\
+			test\n\
+			help"

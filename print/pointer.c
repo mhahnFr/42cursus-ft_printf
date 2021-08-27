@@ -1,7 +1,7 @@
 #include <unistd.h>
 
-#include "print.h"
-#include "print_helper.h"
+#include "./print.h"
+#include "../print_helper/print_helper.h"
 
 size_t	print_pointer(t_format *f, void *ptr)
 {
