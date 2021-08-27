@@ -51,6 +51,18 @@ fclean: clean
 # Deletes everything and compiles all files again.
 re: fclean all
 
-# !!! REMOVE ME BEFORE SUBMISSION !!!
+# A rule that compiles a main file with the library.
 test: $(NAME)
 	$(CC) $(CFLAGS) main.c $(NAME)
+
+# A rule that prints all available rules.
+.phony: help
+help:
+	@echo 	"Available rules:\n\n\
+[Default]	all\n\
+			$(NAME)\n\
+			clean\n\
+			fclean\n\
+			re\n\
+			test\n\
+			help"
