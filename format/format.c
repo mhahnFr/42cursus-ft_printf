@@ -9,48 +9,24 @@ t_format	*create_format(const char *f)
 	format = format_new();
 	if (format != NULL)
 	{
-		switch (*f)
-		{
-			case 'c':
-				format->type = CHAR;
-				break;
-
-			case 's':
-				format->type = STRING;
-				break;
-
-			case 'p':
-				format->type = POINTER;
-				break;
-
-			case 'd':
-				format->type = DECIMAL;
-				break;
-
-			case 'i':
-				format->type = INT;
-				break;
-
-			case 'u':
-				format->type = UINT;
-				break;
-
-			case 'x':
-				format->type = HEX_LOWER;
-				break;
-
-			case 'X':
-				format->type = HEX_UPPER;
-				break;
-
-			case '%':
-				format->type = PERCENT;
-				break;
-
-			default:
-				format->type = -1;
-				break;
-		}
+		if (*f == 'c')
+			format->type = CHAR;
+		else if (*f == 's')
+			format->type = STRING;
+		else if (*f == 'p')
+			format->type = POINTER;
+		else if (*f == 'd')
+			format->type = DECIMAL;
+		else if (*f == 'i')
+			format->type = INT;
+		else if (*f == 'u')
+			format->type = UINT;
+		else if (*f == 'x')
+			format->type = HEX_LOWER;
+		else if (*f == 'X')
+			format->type = HEX_UPPER;
+		else if (*f == '%')
+			format->type = PERCENT;
 		format->length = 1;
 	}
 	return (format);

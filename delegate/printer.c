@@ -10,31 +10,21 @@ size_t	printer_print_character(char c)
 
 size_t	printer_print_argument(t_format *f, va_list *argument)
 {
-	switch (f->type)
-	{
-		case CHAR:
-			return (print_character(f, va_arg(*argument, int)));
-
-		case STRING:
-			return (print_string(f, va_arg(*argument, char*)));
-
-		case POINTER:
-			return (print_pointer(f, va_arg(*argument, void*)));
-
-		case DECIMAL:
-		case INT:
-			return (print_int(f, va_arg(*argument, int)));
-
-		case UINT:
-			return (print_unsigned_int(f, va_arg(*argument, unsigned int)));
-
-		case HEX_LOWER:
-			return (print_hex(f, va_arg(*argument, int), false));
-
-		case HEX_UPPER:
-			return (print_hex(f, va_arg(*argument, int), true));
-
-		case PERCENT:
-			return (print_character(f, '%'));
-	}
+	if (f->type == CHAR)
+		return (print_character(f, va_arg(*argument, int)));
+	else if (f->type == STRING)
+		return (print_string(f, va_arg(*argument, char*)));
+	else if (f->type == POINTER)
+		return (print_pointer(f, va_arg(*argument, void*)));
+	else if (f->type == DECIMAL || f->type == INT)
+		return (print_int(f, va_arg(*argument, int)));
+	else if (f->type == UINT)
+		return (print_unsigned_int(f, va_arg(*argument, unsigned int)));
+	else if (f->type == HEX_LOWER)
+		return (print_hex(f, va_arg(*argument, int), false));
+	else if (f->type == HEX_UPPER)
+		return (print_hex(f, va_arg(*argument, int), true));
+	else if (f->type == PERCENT)
+		return (print_character(f, '%'));
+	return (0);
 }
