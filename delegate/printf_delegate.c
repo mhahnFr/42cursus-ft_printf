@@ -1,5 +1,5 @@
-#include "printf_delegate.h"
-#include "printer.h"
+#include "./printf_delegate.h"
+#include "./printer.h"
 
 size_t	printf_delegate(va_list *args, const char *format)
 {

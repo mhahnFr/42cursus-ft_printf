@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "format.h"
+#include "./format.h"
 
 t_format	*create_format(const char *f)
 {

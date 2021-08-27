@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
-#include "printer.h"
-#include "print.h"
+#include "./printer.h"
+#include "../print/print.h"
 
 size_t	printer_print_character(char c)
 {

@@ -3,7 +3,7 @@
 
 # include <stdbool.h>
 
-# include "printer.h"
+# include "../delegate/printer.h"
 
 size_t	print_character(t_format *f, char c);
 
