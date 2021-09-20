@@ -11,12 +11,6 @@ SRC		=	ft_printf.c ./delegate/printf_delegate.c ./delegate/printer.c	\
 # A macro to change the extension of the files.
 OBJ		=	$(patsubst %.c,%.o,$(SRC))
 
-# The path to the libft.
-LIBFTD	=	../Libft/src/
-
-# The libft archive file.
-#LIBFTA	=	$(LIBFTD)libft.a
-
 # The flags used to compile the C sources.
 CFLAGS	=	-Wall -Werror -Wextra
 
@@ -25,17 +19,12 @@ CFLAGS	=	-Wall -Werror -Wextra
 all: $(NAME)
 
 # Links the compiled files to the library. $(LIBFTA)
-$(NAME): $(OBJ) #$(LIBFTA)
+$(NAME): $(OBJ)
 	$(AR) -rcs $(NAME) $(OBJ)
 
 # Compiles each file individually.
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-
-# Calls the makefile of the libft to take care of it.
-.phony: $(LIBFTA)
-$(LIBFTA):
-	@make -C $(LIBFTD)
 
 # Removes all temporary files.
 .phony: clean
