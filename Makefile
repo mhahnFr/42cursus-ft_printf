@@ -16,6 +16,7 @@ CFLAGS	=	-Wall -Werror -Wextra
 
 
 # Compiles everything.
+.phony: all
 all: $(NAME)
 
 # Links the compiled files to the library. $(LIBFTA)
@@ -38,9 +39,11 @@ fclean: clean
 	- $(RM) a.out
 
 # Deletes everything and compiles all files again.
+.phony: re
 re: fclean all
 
 # A rule that compiles a main file with the library.
+.phony: test
 test: $(NAME)
 	$(CC) $(CFLAGS) main.c $(NAME)
 
