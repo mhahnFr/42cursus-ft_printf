@@ -12,7 +12,7 @@ SRC		=	ft_printf.c ./delegate/printf_delegate.c ./delegate/printer.c	\
 OBJ		=	$(patsubst %.c,%.o,$(SRC))
 
 # The flags used to compile the C sources.
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra -Ofast
 
 
 # Compiles everything.
