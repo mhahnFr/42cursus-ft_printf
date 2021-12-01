@@ -13,9 +13,9 @@ size_t	printer_print_argument(t_format *f, va_list *argument)
 	if (f->type == CHAR)
 		return (print_character(f, va_arg(*argument, int)));
 	else if (f->type == STRING)
-		return (print_string(f, va_arg(*argument, char*)));
+		return (print_string(f, va_arg(*argument, char *)));
 	else if (f->type == POINTER)
-		return (print_pointer(f, va_arg(*argument, void*)));
+		return (print_pointer(f, va_arg(*argument, void *)));
 	else if (f->type == DECIMAL || f->type == INT)
 		return (print_int(f, va_arg(*argument, int)));
 	else if (f->type == UINT)
