@@ -2,11 +2,10 @@
 
 #include "./print.h"
 
-size_t	print_string(t_format *f, char *str)
+size_t	print_string(__attribute__((unused)) t_format *f, char *str)
 {
 	size_t	counter;
 
-	f = NULL;
 	counter = 0;
 	if (str == NULL)
 		str = "(null)";
